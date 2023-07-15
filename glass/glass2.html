@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Glass 2</title>
+    <style>
+      :root {
+        --bg-color: #1f242d;
+        --second-bg-color: #323946;
+        --text-color: #fff;
+        --main-color: #0ef;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        height: 100vh;
+        background-color: var(--bg-color);
+      }
+      .backdrop {
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        z-index: -10;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .backdrop::after {
+        content: "";
+        position: absolute;
+        top: 60%;
+        left: 51%;
+        height: 300px;
+        width: 300px;
+        transform: rotate(200deg);
+        background-color: royalblue;
+      }
+      .backdrop::before {
+        content: "";
+        position: absolute;
+        top: 24%;
+        left: 27%;
+        height: 300px;
+
+        transform: rotate(70deg);
+        width: 300px;
+        background-color: green;
+        backdrop-filter: blur(10px);
+      }
+      .center {
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .glass {
+        height: 400px;
+        width: 600px;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.1),
+          rgba(255, 255, 255, 0)
+        );
+        backdrop-filter: blur(10px);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.27);
+      }
+      .input-container {
+        display: flex;
+        padding: 10px 20px;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .login-header {
+        color: white;
+        font-size: 20px;
+      }
+      input {
+        background: inherit;
+        outline: none;
+        padding: 15px 20px;
+        border-radius: 8px;
+        font-size: 18px;
+        font-weight: bold;
+        color: white;
+      }
+      input::placeholder {
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="backdrop"></div>
+    <div class="center">
+      <div class="glass">
+        <div class="input-container">
+          <h2 class="login-header">Login</h2>
+          <input type="text" placeholder="Email" />
+          <input type="text" placeholder="Email" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

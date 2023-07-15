@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div id="logo" class="logo">Logo</div>
+      <div class="nav-item-container open-navbar">
+        <div>
+          <a href="#">Home</a>
+        </div>
+        <div>
+          <a href="#">Audio</a>
+        </div>
+        <div>
+          <a href="#">Video</a>
+        </div>
+        <div>
+          <a href="#">Watch</a>
+        </div>
+        <div>
+          <a href="#">About Us</a>
+        </div>
+      </div>
+    </nav>
+    <script>
+      const logoItem = document.getElementById("logo");
+      const navItemContainer = document.querySelector(".nav-item-container");
+      logoItem.onclick = () => {
+        console.log("HELLO");
+        navItemContainer.classList.toggle("open-navbar");
+      };
+    </script>
+  </body>
+</html>
